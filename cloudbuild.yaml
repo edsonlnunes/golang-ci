@@ -3,7 +3,7 @@ steps:
 
 - id: "Rodando o teste"
   name: 'gcr.io/cloud-builders/go'
-  args: ['test', 'main']
+  args: ['go', 'test']
 
 - id: "Criando o container"
   name: 'gcr.io/cloud-builders/docker'
