@@ -6,5 +6,5 @@ services:
       container_name: desafio
       working_dir: /go/src
       volumes: 
-        - .:/go/src
+        - ./src/calcular-adicao:/go/src
       tty: true
