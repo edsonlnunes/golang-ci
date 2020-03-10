@@ -1,9 +1,9 @@
 steps:
 
-- id: 'Instalando o go'
-  name: 'gcr.io/cloud-builders/go'
-  args: ['install', './src/calcular-adicao']
-  env: ['PROJECT_ROOT=calcular-adicao']
+# - id: 'Instalando as dependencia'
+#   name: 'gcr.io/cloud-builders/go'
+#   args: ['install', './src/calcular-adicao']
+#   env: ['PROJECT_ROOT=calcular-adicao']
 
 - id: "Rodando o teste"
   name: 'gcr.io/cloud-builders/go'
