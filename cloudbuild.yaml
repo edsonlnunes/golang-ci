@@ -2,12 +2,12 @@ steps:
 
 - id: 'Instalando o go'
   name: 'gcr.io/cloud-builders/go'
-  args: ['install', '.']
+  args: ['install', '/src/calcular-edicao']
   env: ['GOPATH=.']
 
 - id: "Rodando o teste"
   name: 'gcr.io/cloud-builders/go'
-  args: ['test']
+  args: ['test', '/src/calcular-edicao']
   env: ['GOPATH=.']
 
 - id: "Criando o container"
