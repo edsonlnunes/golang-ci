@@ -1,13 +1,13 @@
 steps:
 
-# - id: 'Instalando o go'
-#   name: 'gcr.io/cloud-builders/go'
-#   args: ['install', 'go/src']
-#   env: ['PROJECT_ROOT=calcular-adicao']
+- id: 'Instalando o go'
+  name: 'gcr.io/cloud-builders/go'
+  args: ['install', './src/calcular-adicao']
+  env: ['PROJECT_ROOT=calcular-adicao']
 
 - id: "Rodando o teste"
   name: 'gcr.io/cloud-builders/go'
-  args: ['test', '.']
+  args: ['test', './src/calcular-adicao']
   env: ['PROJECT_ROOT=src/calcular-adicao']
 
 - id: "Criando o container"
