@@ -1,0 +1,8 @@
+steps:
+
+- name: 'gcr.io/cloud-builders/go'
+  args: ['test', 'main']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '--tag=gcr.io/$PROJECT_ID/calcular-adicao', '.']
+
+images: ['gcr.io/$PROJECT_ID/calcular-edicao:latest']
