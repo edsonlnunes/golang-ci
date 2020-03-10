@@ -1,8 +1,22 @@
 steps:
 
-- name: 'gcr.io/cloud-builders/go'
-  args: ['test', 'main']
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '--tag=gcr.io/$PROJECT_ID/calcular-adicao', '.']
 
-images: ['gcr.io/$PROJECT_ID/calcular-edicao:latest']
+- id: "Rodando o teste"
+  name: 'gcr.io/cloud-builders/go'
+  args: ['test', 'main']
+
+- id: "Criando o container"
+  name: 'gcr.io/cloud-builders/docker'
+  args: 
+  - 'build'
+  - '--build-arg'
+  - 'version=1.0.0'
+  - '-t'
+  - 'gcr.io/$PROJECT_ID/calcular-edicao:1.0.0'
+  - '-t'
+  - 'gcr.io/$PROJECT_ID/calcular-edicao:latest'
+  - '.'
+
+images: 
+- 'gcr.io/$PROJECT_ID/calcular-edicao:latest'
+- 'gcr.io/$PROJECT_ID/calcular-edicao:1.0.0'
