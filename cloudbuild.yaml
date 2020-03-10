@@ -8,7 +8,7 @@ steps:
 - id: "Rodando o teste"
   name: 'gcr.io/cloud-builders/go'
   args: ['test', '.']
-  env: ['PROJECT_ROOT=calcular-adicao']
+  env: ['PROJECT_ROOT=src/calcular-adicao']
 
 - id: "Criando o container"
   name: 'gcr.io/cloud-builders/docker'
